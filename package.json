@@ -9,6 +9,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
+    "test:ci": "jest",
     "lint": "eslint --ext .js,.jsx,.es6 ./"
   },
   "dependencies": {
@@ -44,7 +45,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn run lint"
+      "pre-commit": "yarn run lint && yarn run test:ci"
     }
   }
 }
